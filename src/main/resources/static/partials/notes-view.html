@@ -1,0 +1,23 @@
+<div class="notes-view">
+
+    <section class="notes-panel">
+        <div class="action-buttons">
+            <md-button ng-click="logout()">logout</md-button>
+        </div>
+        <div ng-include="'partials/list-notes.html'"></div>
+    </section>
+    <section class="note-panel">
+        <div ng-if="!isEditCreateView && !isCancelled">
+            <ng-include src="'partials/create-edit-note.html'"></ng-include>
+        </div>
+        <div ng-if="isEditCreateView && !isCancelled">
+            <ng-include src="'partials/edit-note.html'"></ng-include>
+        </div>
+        <div ng-if="isCancelled">
+            No note selected
+            <div class="action-buttons">
+                <md-button ng-click="newNoteView()">Create new Note</md-button>
+            </div>
+        </div>
+    </section>
+</div>

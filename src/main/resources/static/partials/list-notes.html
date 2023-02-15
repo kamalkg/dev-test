@@ -1,0 +1,12 @@
+
+
+<div class="available-notes">
+    <h4>Available Notes</h4>
+    <div ng-repeat="note in notes">
+        <md-button ng-click="editNote(note)">{{note.noteHeader}}</md-button>
+    </div>
+</div>
+
+<div ng-if="notes.length === 0">
+    <p>No notes available</p>
+</div>

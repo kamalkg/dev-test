@@ -1,0 +1,21 @@
+<h4>Note</h4>
+
+<form>
+    <div class="edit-note">
+        <form ng-if="isEditCreateView">
+            <md-input-container>
+                <label>NoteHeader</label>
+                <input type="text" ng-model="selectedNote.noteHeader" required md-maxlength="10">
+            </md-input-container>
+            <md-input-container>
+                <label>Content</label>
+                <textarea class="note-body" ng-model="selectedNote.content" rows="10" required md-maxlength="500"></textarea>
+            </md-input-container>
+            <div class="action-buttons">
+                <md-button ng-click="updateNote(selectedNote)">Update</md-button>
+                <md-button ng-click="cancelNote()">Cancel</md-button>
+                <md-button ng-click="deleteNote(note)">Delete</md-button>
+            </div>
+        </form>
+    </div>
+</form>
